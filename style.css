@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.6s, color 0.6s;
+    /* Vibrant light gradient */
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: #111;
+    /* Dark text for readability */
+}
+
+.container {
+    text-align: center;
+    padding: 50px 40px;
+    border-radius: 20px;
+    /* Slightly transparent white card */
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transition: background 0.6s, color 0.6s;
+}
+
+
+/* Switch styles */
+.theme-toggle {
+    margin-top: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 30px;
+    transition: background 0.4s;
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 2px;
+    top: 2px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Hidden checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Checked state */
+input:checked+.switch {
+    background: #4b0082;
+}
+
+input:checked+.switch::before {
+    transform: translateX(30px);
+    box-shadow: 0 2px 10px #4b0082;
+}
+
+/* Dark theme class */
+body.dark {
+    /* Smooth purple gradient */
+    background: linear-gradient(135deg, #2c3e50, #4b0082);
+    color: #fff;
+}
+
+body.dark .container {
+    background: rgba(17, 17, 17, 0.85);
+}
